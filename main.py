@@ -9,6 +9,8 @@ iris = datasets.load_iris()
 iris_X = iris.data
 iris_y = iris.target
 print(iris_y.shape)
+# 样本矩阵（或设计矩阵）X。X的大小通常为(n_samples, n_features)，这意味着样本表示为行，特征表示为列。
+# 目标值y是用于回归任务的真实数字，或者是用于分类的整数（或任何其他离散值）。对于无监督学习，y无需指定。y通常是1d数组，其中i对应于目标X的 第i个样本（行）。
 #划分为训练集和测试集数据(test_size比例， random_state随机种子， stratify保持分布)
 X_train, X_test, y_train, y_test = train_test_split(iris_X, iris_y, test_size=0.3, random_state=0, stratify=iris_y)
 #print(y_train)
