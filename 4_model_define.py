@@ -1,4 +1,5 @@
-# 拟合模型
+################################拟合模型############################
+
 model.fit(X_train, y_train)
 # 模型预测
 model.predict(X_test)
@@ -7,6 +8,18 @@ model.predict(X_test)
 model.get_params()
 # 为模型进行打分
 model.score(data_X, data_y) # 线性回归：R square； 分类问题： acc
+
+################################pipeline############################
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import make_pipeline
+
+# 创建一个pipeline对象
+pipe = make_pipeline(
+    StandardScaler(),
+    LogisticRegression(random_state=0)
+)
+pipe.fit(X_train, y_train)
 
 ################################线性回归############################
 from sklearn.linear_model import LinearRegression
