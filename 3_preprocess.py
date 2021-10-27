@@ -6,7 +6,8 @@ X_after = StandardScaler().fit().transform()
 ##############################数据归一化########################################
 # x = (x - min)/(max - min)
 from sklearn.preprocessing import MinMaxScaler
-# copy：为拷贝属性，默认为True,表示对原数据组拷贝操作，这样变换后元数组不变，False表 示变换操作后，原数组也跟随变化，相当于c++中的引用或指针。copy = 1 的效果 同 copy = True，copy = 0 的效果同 copy =False
+# copy：为拷贝属性，默认为True,表示对原数据组拷贝操作，这样变换后元数组不变，False表 示变换操作后，
+# 原数组也跟随变化，相当于c++中的引用或指针。copy = 1 的效果 同 copy = True，copy = 0 的效果同 copy =False
 MinMaxScaler(feature_range=[0, 1], copy=True)
 
 ##############################数据正则化########################################
