@@ -8,6 +8,19 @@ cross_val_score(model, X, y=None, scoring=None, cv=None, n_jobs=1)
     scoring: 打分参数-‘accuracy’、‘f1’、‘precision’、‘recall’ 、‘roc_auc’、'neg_log_loss'等等
 """
 
+scores = []
+alphas = []
+for alpha in range(1, 100):
+    knn = neighbors.KNeighborsClassifier(n_neighbors=alpha)  # 分类
+    knn.fit(x_train, y_train)
+    score = knn.score(x_test, y_test)
+    sc = np.sqrt(-cross_val_score(knn, x_train, y_train, scoring="neg_mean_squared_error", cv=10))
+    print(sc.mean())
+    scores.append(np.array(sc.mean()))
+    alphas.append(alpha)
+plt.plot(alphas, scores)
+plt.show()
+
 ##############################检验曲线#################################
 from sklearn.model_selection import validation_curve
 train_score, test_score = validation_curve(model, X, y, param_name, param_range, cv=None, scoring=None, n_jobs=1)
