@@ -48,7 +48,7 @@ X_train, X_test, y_train, y_test = train_test_split(iris_X, iris_y, test_size=0.
 # 设置knn分类器
 knn = KNeighborsClassifier()
 # 给定参数搜索范围：list or distribution
-param_dist = {"n_neighbors": [1, None],  # 给定list
+param_dist = {"n_neighbors": range(1, None),  # 给定list
               "weights": ['uniform', 'distance'],
               "metric": ['euclidean', 'manhattan', 'chebyshev', 'minkowski']}  # 给定list
 # 用RandomSearch+CV选取超参数
