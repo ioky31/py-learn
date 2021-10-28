@@ -58,7 +58,10 @@ random_search = RandomizedSearchCV(knn, param_distributions=param_dist,
 knn.fit(X_train, y_train)
 knn.score(X_test, y_test)
 print(knn.score(X_test, y_test))
-
+best_estimator = random_search.best_estimator_
+print(best_estimator)
+#输出最优训练器的精度
+print(random_search.best_score_)
 ###################################网络搜索############################################
 from sklearn.model_selection import GridSearchCV
 
@@ -72,3 +75,7 @@ grid_search = GridSearchCV(forest_reg, param_grid, cv=5,
                            scoring='neg_mean_squared_error')
 
 grid_search.fit(housing_prepared, housing_labels)
+best_estimator = grid_search.best_estimator_
+print(best_estimator)
+#输出最优训练器的精度
+print(random_search.best_score_)
