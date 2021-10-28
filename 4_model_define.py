@@ -100,6 +100,10 @@ from sklearn import neighbors
 #定义kNN分类模型
 model = neighbors.KNeighborsClassifier(n_neighbors=5, n_jobs=1) # 分类
 model = neighbors.KNeighborsRegressor(n_neighbors=5, n_jobs=1) # 回归
+'''
+定量输出是回归，进行预测比如明天的降水概率
+定性输出是分类，需要定性的描述
+'''
 """参数
 ---
 def KNeighborsClassifier(n_neighbors = 5,
