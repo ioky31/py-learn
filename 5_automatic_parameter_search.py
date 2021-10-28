@@ -54,7 +54,7 @@ param_dist = {"n_neighbors": [1, None],  # 给定list
 # 用RandomSearch+CV选取超参数
 n_iter_search = 100
 random_search = RandomizedSearchCV(knn, param_distributions=param_dist,
-                                   n_iter=n_iter_search, cv=5)
+                                   n_iter=n_iter_search, cv=5)# cv是交叉验证的次数
 knn.fit(X_train, y_train)
 knn.score(X_test, y_test)
 print(knn.score(X_test, y_test))
