@@ -1,3 +1,8 @@
+###################################随机搜索############################################
+'''
+少量离散参数用网络搜索
+多连续参数用随机搜索
+'''
 # import numpy as np
 # from scipy.stats import randint as sp_randint
 # from sklearn.model_selection import RandomizedSearchCV
@@ -44,7 +49,8 @@ X_train, X_test, y_train, y_test = train_test_split(iris_X, iris_y, test_size=0.
 knn = KNeighborsClassifier()
 # 给定参数搜索范围：list or distribution
 param_dist = {"n_neighbors": [1, None],  # 给定list
-              }  # 给定list
+              "weights": ['uniform', 'distance'],
+              "metric": ['euclidean', 'manhattan', 'chebyshev', 'minkowski']}  # 给定list
 # 用RandomSearch+CV选取超参数
 n_iter_search = 100
 random_search = RandomizedSearchCV(knn, param_distributions=param_dist,
@@ -52,3 +58,17 @@ random_search = RandomizedSearchCV(knn, param_distributions=param_dist,
 knn.fit(X_train, y_train)
 knn.score(X_test, y_test)
 print(knn.score(X_test, y_test))
+
+###################################网络搜索############################################
+from sklearn.model_selection import GridSearchCV
+
+param_grid = [
+    {'n_estimators': [3, 10, 30], 'max_features': [2, 4, 6, 8]},
+    {'bootstrap': [False], 'n_estimators': [3, 10], 'max_features': [2, 3, 4]},
+]
+
+forest_reg = RandomForestRegressor()
+grid_search = GridSearchCV(forest_reg, param_grid, cv=5,
+                           scoring='neg_mean_squared_error')
+
+grid_search.fit(housing_prepared, housing_labels)
