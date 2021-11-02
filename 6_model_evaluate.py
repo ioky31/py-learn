@@ -39,12 +39,12 @@ train_score, test_score = validation_curve(model, X, y, param_name, param_range,
 """
 ##############################混淆矩阵#################################
 from sklearn.metrics import confusion_matrix
-confusion_matrix = confusion_matrix(y_Actual, y_Predicted, labels=[0, 1])  # 计算混淆矩阵
-print("混淆矩阵为:\nIn{}\n".format(confusion_matrix))
+confusion_matrix_ = confusion_matrix(y_Actual, y_Predicted, labels=[0, 1])  # 计算混淆矩阵
+print("混淆矩阵为:\nIn{}\n".format(confusion_matrix_))
 
 ##############################混淆矩阵#################################
-P = confusion_matrix[1, 1] / (confusion_matrix[1, 1] + confusion_matrix[0, 1])  # 计算精确率
-R = confusion_matrix[1, 1] / (confusion_matrix[1, 1] + confusion_matrix[1, 0])  # 计算召回率
+P = confusion_matrix_[1, 1] / (confusion_matrix_[1, 1] + confusion_matrix_[0, 1])  # 计算精确率
+R = confusion_matrix_[1, 1] / (confusion_matrix_[1, 1] + confusion_matrix_[1, 0])  # 计算召回率
 F1score = 2 * P * R / (P + R)  # 计算F1测度值
 print("F1score: ", F1score)
 
