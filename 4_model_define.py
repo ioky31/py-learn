@@ -39,7 +39,8 @@ from sklearn.linear_model import Ridge, RidgeCV
 ridge = Ridge(alpha=alpha)
 ridge.fit(X_train, y_train)
 pred = ridge.predict(X_test)
-	
+print(ridge.coef_)# 返回模型的估计系数。
+
 ################################逻辑回归LR############################
 from sklearn.linear_model import LogisticRegression
 # 定义逻辑回归模型
