@@ -34,6 +34,12 @@ model = LinearRegression(fit_intercept=True, normalize=False,
      n_jobs：指定线程数
 """
 
+################################岭回归############################
+from sklearn.linear_model import Ridge, RidgeCV
+ridge = Ridge(alpha=alpha)
+ridge.fit(X_train, y_train)
+pred = ridge.predict(X_test)
+	
 ################################逻辑回归LR############################
 from sklearn.linear_model import LogisticRegression
 # 定义逻辑回归模型
