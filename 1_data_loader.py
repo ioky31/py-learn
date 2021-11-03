@@ -13,8 +13,24 @@ GT = np.array(GT)
 ###################################读取csv文件###################################
 
 data = pd.read_csv(r'data.csv', index_col = 0) #数据第一列为索引，如果不加index_col=0，则会在原数据前再加一列索引
+###################################dropna()方法-丢弃含空值的行、列###################################
+'''
+函数形式：dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
 
+参数：
 
+axis：轴。0或'index'，表示按行删除；1或'columns'，表示按列删除。
+
+how：筛选方式。‘any’，表示该行/列只要有一个以上的空值，就删除该行/列；‘all’，表示该行/列全部都为空值，就删除该行/列。
+
+thresh：非空元素最低数量。int型，默认为None。如果该行/列中，非空元素数量小于这个值，就删除该行/列。
+
+subset：子集。列表，元素为行或者列的索引。如果axis=0或者‘index’，subset中元素为列的索引；如果axis=1或者‘column’，subset中元素为行的索引。由subset限制的子区域，是判断是否删除该行/列的条件判断区域。
+
+inplace：是否原地替换。布尔值，默认为False。如果为True，则在原DataFrame上进行操作，返回值为None。
+'''
+
+d.dropna(axis=0, how='any')
 ####################################sklearn数据库读取####################################
 from sklearn import datasets
 iris = datasets.load_iris()
