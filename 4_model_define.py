@@ -48,6 +48,11 @@ pred = ridge.predict(X_test)
 loss = mean_squared_error(y_test, pred)
 print('交叉验证最佳alpha值', ridge.alpha_)  # 只有在使用RidgeCV算法时才有效
 print("mean_squared_error: ", loss)
+################################Lasso回归############################
+from sklearn.linear_model import Lasso, LassoCV
+
+################################ElasticNet回归############################
+from sklearn.linear_model import ElasticNet, ElasticNetCV
 ################################逻辑回归LR############################
 from sklearn.linear_model import LogisticRegression
 # 定义逻辑回归模型
