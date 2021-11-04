@@ -12,10 +12,14 @@ GT = np.array(GT)
 
 ###################################读取csv文件###################################
 
+<<<<<<< HEAD
 data = pd.read_csv(r'data.csv', index_col = 0) #数据第一列为索引，如果不加index_col=0，则会在原数据前再加一列索引
 ###################################dropna()方法-丢弃含空值的行、列###################################
 '''
 函数形式：dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
+=======
+data = pd.read_csv(r'data.csv', index_col=0) #数据第一列为索引，如果不加index_col=0，则会在原数据前再加一列索引
+>>>>>>> ad9754bc6520c19cad8f73239ca1cb321df8bdbf
 
 参数：
 
