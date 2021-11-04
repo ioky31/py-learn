@@ -34,6 +34,25 @@ model = LinearRegression(fit_intercept=True, normalize=False,
      n_jobs：指定线程数
 """
 
+################################岭回归############################
+from sklearn.linear_model import Ridge, RidgeCV
+ridge = Ridge(alpha=alpha)
+ridge.fit(X_train, y_train)
+pred = ridge.predict(X_test)
+print(ridge.coef_)# 返回模型的估计系数。
+
+# 参数搜索
+ridge = RidgeCV(alphas=10 ** np.linspace(10, -2, 100) * 0.5, cv=10)
+ridge.fit(X_train, y_train)
+pred = ridge.predict(X_test)
+loss = mean_squared_error(y_test, pred)
+print('交叉验证最佳alpha值', ridge.alpha_)  # 只有在使用RidgeCV算法时才有效
+print("mean_squared_error: ", loss)
+################################Lasso回归############################
+from sklearn.linear_model import Lasso, LassoCV
+
+################################ElasticNet回归############################
+from sklearn.linear_model import ElasticNet, ElasticNetCV
 ################################逻辑回归LR############################
 from sklearn.linear_model import LogisticRegression
 # 定义逻辑回归模型
