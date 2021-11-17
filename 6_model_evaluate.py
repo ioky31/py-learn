@@ -13,7 +13,7 @@ cross_val_score(model, X, y=None, scoring=None, cv=None, n_jobs=1)
     cv ： k-fold
     scoring: 打分参数-‘accuracy’、‘f1’、‘precision’、‘recall’ 、‘roc_auc’、'neg_log_loss'等等
 """
-cross_val_score(MLPClassifier_, data_X, data_y, scoring="accuracy", cv=10)
+cv_accuracy = cross_val_score(MLPClassifier_, X_train, y_train, scoring="accuracy", cv=10)
 cv_accuracy = cross_val_score(MLPClassifier_, data_X, data_y, scoring="accuracy", cv=10)
 print("交叉验证平均准确率： ", cv_accuracy.mean())
 
