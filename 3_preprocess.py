@@ -1,5 +1,5 @@
 # ##############################数据标准化########################################
-# # x = (x - mean)/std 按列即每个特征
+# # x = (x - mean)/std 按列即每个特征标准化
 # from sklearn.preprocessing import StandardScaler
 # X_after = StandardScaler().fit().transform()
 #
