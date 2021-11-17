@@ -141,6 +141,16 @@ plt.ylabel('True Positive Rate')  # 可以使用中文，但需要导入一些�
 plt.title('ROC Curve')
 plt.legend(loc="lower right")
 
+##############################PR曲线#################################
+from sklearn.metrics import precision_recall_curve
+
+precision, recall, thresholds = precision_recall_curve(y_test, y_pred)
+plt.figure("P-R Curve")
+plt.title('Precision/Recall Curve')
+plt.xlabel('Recall')
+plt.ylabel('Precision')
+plt.plot(recall, precision)
+plt.show()
 ##############################混淆矩阵热力图#################################
 import seaborn as sns
 sns.set_context({"figure.figsize": (8, 8)})
