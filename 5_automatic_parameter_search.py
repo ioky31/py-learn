@@ -69,11 +69,10 @@ param_grid = {'activation': ['identity', 'logistic', 'tanh', 'relu'],
               'solver': ['lbfgs', 'sgd', 'adam'],
               'hidden_layer_sizes': [(50,), (100,), (150,), (200,)]}
 
-forest_reg = RandomForestRegressor()
-grid_search = GridSearchCV(forest_reg, param_grid, cv=5,
-                           scoring='neg_mean_squared_error')
-
-grid_search.fit(housing_prepared, housing_labels)
+MLPClassifier_ = MLPClassifier(activation='relu', solver='adam', alpha=0.0001, max_iter=100000)
+grid_search = GridSearchCV(MLPClassifier_, param_grid, cv=10,
+                           scoring='accuracy')
+grid_search.fit(X_train, y_train)
 best_estimator = grid_search.best_estimator_
 print(best_estimator)
 #输出最优训练器的精度
