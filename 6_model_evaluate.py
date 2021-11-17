@@ -13,17 +13,7 @@ cross_val_score(model, X, y=None, scoring=None, cv=None, n_jobs=1)
     cv ： k-fold
     scoring: 打分参数-‘accuracy’、‘f1’、‘precision’、‘recall’ 、‘roc_auc’、'neg_log_loss'等等
 """
-
-scores = []
-alphas = []
-for alpha in range(1, 100):
-    knn = neighbors.KNeighborsClassifier(n_neighbors=alpha)  # 分类
-    sc = np.sqrt(-cross_val_score(knn, x y, scoring="neg_mean_squared_error", cv=10))
-    print(sc.mean())
-    scores.append(np.array(sc.mean()))
-    alphas.append(alpha)
-plt.plot(alphas, scores)
-plt.show()
+cross_val_score(MLPClassifier_, data_X, data_y, scoring="accuracy", cv=10)
 
 ##############################误差计算#################################
 from sklearn.metrics import mean_squared_error
