@@ -1,3 +1,9 @@
+##############################手动k折交叉验证#################################
+from sklearn.model_selection import KFold
+for train_indices, test_indices in kf.split(data_X):
+    MLPClassifier_.fit(data_X.iloc[train_indices], data_y[train_indices])
+    print(MLPClassifier_.score(data_X.iloc[test_indices], data_y[test_indices]))#     dataFrame数据类型要加。iloc才能索引
+    
 ##############################交叉验证#################################
 from sklearn.model_selection import cross_val_score
 cross_val_score(model, X, y=None, scoring=None, cv=None, n_jobs=1)
