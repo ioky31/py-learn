@@ -13,6 +13,12 @@ GT = np.array(GT)
 ###################################读取csv文件###################################
 
 data = pd.read_csv(r'data.csv', index_col = 0) #数据第一列为索引，如果不加index_col=0，则会在原数据前再加一列索引
+
+# 将 Salary 列作为 y，其他列作为 X
+cols_name = data.columns.values.tolist()  # 行名称
+cols_name.remove('Salary')
+x_data = data[cols_name]
+y_data = data['Salary']
 ###################################dropna()方法-丢弃含空值的行、列###################################
 '''
 函数形式：dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
