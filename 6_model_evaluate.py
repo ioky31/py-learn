@@ -18,9 +18,7 @@ scores = []
 alphas = []
 for alpha in range(1, 100):
     knn = neighbors.KNeighborsClassifier(n_neighbors=alpha)  # 分类
-    knn.fit(x_train, y_train)
-    score = knn.score(x_test, y_test)
-    sc = np.sqrt(-cross_val_score(knn, x_train, y_train, scoring="neg_mean_squared_error", cv=10))
+    sc = np.sqrt(-cross_val_score(knn, x y, scoring="neg_mean_squared_error", cv=10))
     print(sc.mean())
     scores.append(np.array(sc.mean()))
     alphas.append(alpha)
