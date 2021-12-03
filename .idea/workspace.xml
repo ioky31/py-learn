@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62a4f3c5-25df-4976-be0d-e495bfb6d634" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/1_data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/1_data_loader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataframe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +20,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="207PyxwpT4uR0lvPtqnAE25NnOs" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -71,6 +74,7 @@
       <workItem from="1635392914168" duration="951000" />
       <workItem from="1635402313960" duration="300000" />
       <workItem from="1636011684996" duration="111000" />
+      <workItem from="1638516955085" duration="48000" />
     </task>
     <servers />
   </component>
