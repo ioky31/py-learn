@@ -5,6 +5,7 @@ dataset = pd.read_excel(filename)
 GT = dataset['GT']
 predict = dataset['predict']
 # Pandas.series 会默然用0到n-1来作为series的index, 但也可以自己指定index( 可以把index理解为dict里面的key )
+index_col=None, header=None % 无行索引和列索引
 
 # series转换为numpy
 import numpy as np
