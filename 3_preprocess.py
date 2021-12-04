@@ -51,3 +51,7 @@ n_components: int, float, None 或 string，PCA算法中所要保留的主成分
 copy：True 或False，默认为True，即是否需要将原始训练数据复制。
 whiten：True 或False，默认为False，即是否白化，使得每个特征具有相同的方差。
 '''
+##############################TSNE#######################################
+from sklearn.manifold import TSNE
+X_data_stne = TSNE(n_components=n).fit_transform(X_data)# 只能降到2-3维
+
