@@ -9,3 +9,9 @@ writer.save()
 
 %%%%%%%%%%%%%%%%%%%%%%% dataframe拼接 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 X_data = pd.concat([X_train, X_test], axis=0, ignore_index=True)  # 将df2数据与df1合并
+
+
+%%%%%%%%%%%%%%%%%%%%%%% dataframe索引 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# 下标索引
+.iloc()
