@@ -3,6 +3,8 @@ from pandas.core.frame import DataFrame
 df = DataFrame(ps)  # 将字典转换成为数据框
 writer = pd.ExcelWriter('p_value.xlsx')
 df.to_excel(writer, index=False, encoding='utf-8', sheet_name='Sheet1')
+# df_test.to_excel(writer, index=False, header=X_test.columns.values.tolist(), encoding='utf-8', sheet_name='Sheet1')
+
 writer.save()
 
 %%%%%%%%%%%%%%%%%%%%%%% dataframe拼接 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
