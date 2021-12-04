@@ -15,3 +15,8 @@ X_data = pd.concat([X_train, X_test], axis=0, ignore_index=True)  # 将df2数据
 
 # 下标索引
 .iloc()
+
+# 获取行标签
+.index.values
+# 获取列标签
+.columns.values
