@@ -14,5 +14,7 @@ X_data = pd.DataFrame(X_data)
 X_data.columns = feature_name
 
 # RFE递归消除
+from sklearn.feature_selection import RFE
+
 rfe = RFE(lr, n_features_to_select=1)
 rfe.fit(X_data, y_data)
