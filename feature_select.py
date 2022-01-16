@@ -12,3 +12,7 @@ feature_name = X_data.columns[feature_idx]
 X_data = model.transform(X_data)
 X_data = pd.DataFrame(X_data)
 X_data.columns = feature_name
+
+# RFE递归消除
+rfe = RFE(lr, n_features_to_select=1)
+rfe.fit(X,Y)
