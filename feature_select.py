@@ -15,4 +15,4 @@ X_data.columns = feature_name
 
 # RFE递归消除
 rfe = RFE(lr, n_features_to_select=1)
-rfe.fit(X,Y)
+rfe.fit(X_data, y_data)
