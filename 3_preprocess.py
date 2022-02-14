@@ -55,3 +55,10 @@ whiten：True 或False，默认为False，即是否白化，使得每个特征�
 from sklearn.manifold import TSNE
 X_data_stne = TSNE(n_components=n).fit_transform(X_data)# 只能降到2-3维
 
+##############################FactorAnalysis#######################################
+from sklearn.decomposition import FactorAnalysis
+
+##############################DictionaryLearning#######################################
+from sklearn.decomposition import DictionaryLearning
+
+
