@@ -1,2 +1,2 @@
 # py-learn
- python代码库
+ 机器学习代码库
